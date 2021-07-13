@@ -4,6 +4,14 @@ Desenvolvido para facilitar a construção dos seus sites.
 
 Você pode criar e estilizar seus elementos HTML facilmente utilizando as classes CSS.
 
+## Por que utilizar MiniFramework? (propostas)
+
+- Muito fácil e prático.
+- Responsivo. 
+- Vanilla js, sem dependências.
+- Informações e ajudas no console do seu navegador.
+- Você pode desenvolver uma página inteira utilizando pouquíssima codificação css.
+
 ## Inicialização
 
 Para começar adicione o arquivo css dentro do `<head>` do seu documento HTML.
