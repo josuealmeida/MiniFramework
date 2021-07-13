@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Aprenda a como usar o MiniFramework.">
+		<meta name="keywords" content="framework, css, javascript, js, como usar, tutorial">
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="../css/miniframework.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<title>Documentação - MiniFramework</title>
+	</head>
+	
+	<body>
+
+		<!-- Loading -->
+		<div class="loading loading-visible">
+			<div class="loader"></div>
+			<p>Hmmm... parece que temos algum problema. Tente novamente mais tarde.</p>
+		</div>
+
+
+		<!-- Topo - cabeçalho, menu principal, barra de navegação -->
+
+		<header class="bg-blue p-1">
+			<div class="container flex-between-center">
+				<a href="./" class="text-2 uppercase">MiniFramework</a>
+
+				<nav class="flex-between-center">
+					<div class="md-d-none mr-3">
+						<a href="./" class="mx-1 relative">Início</a>
+						<a href="documentacao.html" class="mx-1 active">Documentação</a>
+						<a href="elementos.html" class="mx-1">Elementos</a>
+					</div>
+
+					<div class="flex-between-center">
+						<a href="#" download class="download btn-light sm-d-none">Baixar v1.0</a>
+						<i class='bx bx-menu btn-menu white ml-2'></i>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+
+		<!-- Sidebar -->
+
+		<div class="sidebar-overlay"></div>
+		
+		<nav class="sidebar bg-white">
+			<header>
+				<span>Menu</span>
+				<i class='bx bx-x'></i>
+			</header>
+
+			<a href="./" class="item">Início</a>
+			<a href="documentacao.html" class="item active">Documentação</a>
+			<a href="elementos.html" class="px-2 item">Elementos</a>
+			<a href="#cores" class="item">Cores</a>
+			<a href="#texto" class="item">Texto</a>
+			<a href="#formulários" class="item">Formulários</a>
+			<a href="#flexbox" class="item">Flexbox</a>
+			<a href="#responsividade" class="item">Responsividade</a>
+			<a href="#posições" class="item">Posições</a>
+			<a href="#espaçamentos" class="item">Espaçamentos</a>
+		</nav>
+
+
+		<!-- Inicialização -->
+		<main class="py-3 px-2">
+
+			<section id="inicializacao">
+				<div class="container">
+					<h2 class="text-4">Inicialização</h2>
+					<p class="mt-1">Seja bem-vindo ao MiniFramework versão 1.0, para iniciar faça o dowload e copie a a tag de inclusão logo abaixo, e vamos lá.</p>
+					
+					<a href="#" download class="download btn mt-2">Fazer download</a>
+					
+					<!-- CSS link CDN -->
+					<h3 class="text-3 mt-3">CSS</h3>
+					<p class="mt-1">Utilize o <code class="bg-light blue">link</code> no <code class="bg-light blue">head</code> do seu documento html.</p>
+
+					<textarea class="d-none copyTag">&ltlink rel="stylesheet" href="../miniframework v1.0/css/miniframework.css&gt</textarea>
+
+					<div class="info-gray mt-2 flex-between-center">
+						<code>
+							<span class="blue">&ltlink</span>
+							<span class="blue">rel</span>
+							<span class="green">="stylesheet"</span>
+							<span class="blue">href</span>
+							<span class="green">="../miniframework v1.0/css/miniframework.css"</span>
+							<span class="blue">&gt</span>
+						</code>
+
+						<div class="copy-container flex-center">
+							<span class="bg-green white d-none msg-copiado">Copiado!</span>
+							<i class='bx bx-copy text-1 gray ml-2'></i>
+						</div>
+					</div>
+
+					<!-- JS include script -->
+					<h3 class="text-3 mt-3">JavaScript</h3>
+					<p class="mt-1">Utilizamos Vannila js, portanto sem dependências de frameworks e blibiotecas como o jQuery. Inclua o <code class="bg-light blue">script</code> no final do <code class="bg-light blue">body</code> de seu documento.</p>
+
+					<textarea class="d-none copyTag">&ltscript src="../miniframework v1.0/DOM_Manipulation.js"&gt&lt/script&gt</textarea>
+
+					<div class="info-gray mt-2 flex-between-center">
+						<code>
+							<span class="blue">&ltscript</span>
+							<span class="blue">src</span>
+							<span class="green">="../miniframework v1.0/DOM_Manipulation.js"</span>
+							<span class="blue">&gt&lt/script&gt</span>
+						</code>
+
+						<div class="copy-container flex-center">
+							<span class="bg-green white d-none msg-copiado">Copiado!</span>
+							<i class='bx bx-copy text-1 gray ml-2'></i>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- Seção: Cores -->
+
+			<section id="cores" class="mt-3">
+				<div class="container">
+					<h2 class="text-4">Cores</h2>
+
+					<p class="mt-1">O MiniFramework vem com 8 cores básicas para você utilizar em seus projetos, se estiver escrevendo um estilo com o <a href="https://sass-lang.com/" target="_blank">Sass</a> você poderá importar as váriáveis de cores, é bem simple, basta escrever o nome da cor que desejar exemplo: <strong>$dark, $blue, $yellow.</strong></p>
+
+					<!-- Textos coloridos -->
+					<ul class="mt-3 no-list flex-between">
+						<li class="blue text-2 my-1">blue</li>
+						<li class="green text-2 my-1">green</li>
+						<li class="red text-2 my-1">red</li>
+						<li class="yellow text-2 my-1">yellow</li>
+						<li class="gray text-2 my-1">gray</li>
+						<li class="dark text-2 my-1">dark</li>
+					</ul>
+
+					<!-- Caixas coloridas -->
+					<div id="grid" class="mt-3">
+						<div class="caixa-cor bg-blue">
+							<span>bg-blue</span>
+						</div>
+
+						<div class="caixa-cor bg-green">
+							<span>bg-green</span>
+						</div>
+
+						<div class="caixa-cor bg-red">
+							<span>bg-red</span>
+						</div>
+
+						<div class="caixa-cor bg-yellow">
+							<span>bg-yellow</span>
+						</div>
+
+						<div class="caixa-cor border bg-white">
+							<span>bg-white</span>
+						</div>
+
+						<div class="caixa-cor bg-light">
+							<span>bg-light</span>
+						</div>
+
+						<div class="caixa-cor bg-gray">
+							<span>bg-gray</span>
+						</div>
+
+						<div class="caixa-cor bg-dark">
+							<span>bg-dark</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- Seção: Cores -->
+
+			<section id="texto" class="mt-3">
+				<div class="container">
+					<h2 class="text-4">Formatação de textos</h2>
+
+					<p class="mt-1">Os textos possuem 5 tamanhos diferentes. Utilize as classes <strong>text-1, text-2, text-3, text-4 e text-5</strong> para definir um tamanho para seu texto.</p>
+
+					<ul class="no-list mt-3">
+						<li class="text-5">Lorem ipsum dolor.</li>
+						<li class="text-4">Lorem ipsum dolor.</li>
+						<li class="text-3">Lorem ipsum dolor.</li>
+						<li class="text-2">Lorem ipsum dolor.</li>
+						<li class="text-1">Lorem ipsum dolor.</li>
+					</ul>
+
+					<h3 class="text-3 mt-3">Fontes</h3>
+
+					<p class="mt-1">O MiniFramework vem com 5 fontes incluídas do <a href="https://fonts.google.com/" target="_blank">Google fonts</a>, a fonte padrão é Raleway. Você pode alterar a fonte em seu css.</p>
+				</div>
+			</section>
+
+		</main>
+
+
+		<!-- Scroll to top, voltar para o topo -->
+
+		<i class='bx bxs-chevron-up-circle scroll-top'></i>
+
+
+		<!-- Rodapé -->
+
+		<footer class="bg-dark p-2">
+			<div class="container flex-between-center md-d-block">
+				<a href="./" class="text-2">MiniFramework</a>
+
+				<p class="text-1">O MiniFramework ainda está em densenvolvimento, aguarde por atualizações.</p>
+			</div>
+		</footer>
+
+
+		<!-- JavaScript -->
+		<script src="../DOM_Manipulation.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

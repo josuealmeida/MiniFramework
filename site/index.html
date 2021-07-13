@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Um framework prático, produtivo e muito fácil de usar. Conheça o MiniFramework agora!">
+		<meta name="keywords" content="framework, css, javascript, js, fácil, rápido, leve, produtivo, design moderno, responsivo">
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="../css/miniframework.css">
+		
+		<style>
+			#main{
+				background: linear-gradient(to right, #7c92d3, #cc28cc);
+				min-height: 50vh;
+			}
+			.bx-check{
+				font-size: 1rem;
+			}
+		</style>
+
+		<title>MiniFramework - Um framework prático e produtivo</title>
+	</head>
+	
+	<body>
+
+		<!-- Loading -->
+		<div class="loading loading-visible">
+			<div class="loader"></div>
+			<p>Hmmm... parece que temos algum problema. Tente novamente mais tarde.</p>
+		</div>
+
+
+		<!-- Topo - cabeçalho, menu principal, barra de navegação -->
+
+		<header class="bg-blue full-width p-1">
+			<div class="container flex-between-center">
+				<a href="index.html" class="text-2 uppercase">MiniFramework</a>
+
+				<nav class="flex-between-center">
+					<div class="md-d-none">
+						<a href="index.html" class="mx-1 relative active">Início</a>
+						<a href="documentacao.html" class="mx-1">Documentação</a>
+						<a href="elementos.html" class="mx-1">Elementos</a>
+					</div>
+
+					<a href="#" download class="download btn-light ml-3">Baixar v1.0</a>
+					<i class='bx bx-menu btn-menu d-none md-d-block white ml-2'></i>
+				</nav>
+			</div>
+		</header>
+
+
+		<!-- Sidebar -->
+
+		<div class="sidebar-overlay d-none md-d-block"></div>
+
+		<nav class="sidebar d-none md-d-block bg-white">
+			<header>
+				<span>Menu</span>
+				<i class='bx bx-x'></i>
+			</header>
+
+			<a href="index.html" class="item active">Início</a>
+			<a href="documentacao.html" class="item">Documentação</a>
+			<a href="elementos.html" class="px-2 item">Elementos</a>
+		</nav>
+
+
+		<!-- Início - background e apresentação -->
+
+		<div id="main" class="flex-center p-1">
+			<div class="container">
+				<h1 class="text-5 white">Um framework prático e produtivo</h1>
+				<p class="text-2 mt-1 white">Esse framework foi desenvolvido pensando na praticidade, possuindo classes css com as propriedades mais usadas para o desenvolvimento diário</p>
+			</div>
+		</div>
+
+
+		<!-- Cards das principais características -->
+
+		<div class="bg-light">
+			<div class="container flex-center p-1">
+				<i class='bx bxl-html5 mx-2'></i>
+				<i class='bx bxl-css3 mx-2'></i>
+				<i class='bx bxl-sass mx-2'></i>
+				<i class='bx bxl-javascript mx-2'></i>
+			</div>
+		</div>
+
+
+
+		<!-- Porquê Miniframework? -->
+		<section class="mt-3 px-2">
+			<div class="container">
+				<h4 class="text-3 mt-3">Por que usar MiniFramework?</h4>
+
+				<ul class="mt-2 no-list">
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Muito fácil e prático.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Classes com os estilos mais usados no dia a dia.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Muito leve.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Totalmente responsivo.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Design moderno.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Vanilla js, sem dependências.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Informações e ajudas no console do seu navegador.
+					</li>
+
+					<li class="text-2 mb-1">
+						<i class='bx bx-check green'></i>
+						Você pode desenvolver uma página inteira utilizando pouquíssima codificação css.
+					</li>
+
+					<li class="text-2">
+						<i class='bx bx-check green'></i>
+						Sem tempo? sem problema.
+					</li>
+				</ul>
+
+				<div class="flex-center">
+					<a href="documentacao.html" class="btn mt-3">Comece agora!</a>
+				</div>
+			</div>
+		</section>
+
+
+		<!--
+
+		Alert
+
+		<div class="container mt-3 info-yellow">
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+		</div>
+
+
+		Seção de conteúdo
+
+		<section class="py-3">
+			<div class="container">
+				<div class="flex-between md-flex-column">
+					<img src="bird.jpg" class="md-full-width">
+
+					<div class="p-2">
+						<h2 class="text-3 mb-2">Nemo sed aspernatur repellendus</h2>
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto voluptates, quaerat sequi quidem impedit necessitatibus maxime molestias ipsam optio at omnis voluptate commodi consectetur.</p>
+						<a href="" class="btn-green mt-2">View more</a>
+					</div>
+				</div>
+
+				<div class="flex-between md-flex-column mt-3">
+					<img src="elephant.jpg" class="md-full-width">
+
+					<div class="p-2">
+						<h2 class="text-3 mb-2">Nemo sed aspernatur repellendus</h2>
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto voluptates, quaerat sequi quidem impedit necessitatibus maxime molestias ipsam optio at omnis voluptate commodi consectetur.</p>
+						<a href="" class="btn-green mt-2">View more</a>
+					</div>
+				</div>
+
+				<div class="flex-between md-flex-column mt-3">
+					<img src="panda.jpg" class="md-full-width">
+
+					<div class="p-2">
+						<h2 class="text-3 mb-2">Nemo sed aspernatur repellendus</h2>
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto voluptates, quaerat sequi quidem impedit necessitatibus maxime molestias ipsam optio at omnis voluptate commodi consectetur.</p>
+						<a href="" class="btn-green mt-2">View more</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		Seção de formulário
+
+		<section class="bg-light p-3">
+			<div class="container">
+				<h2 class="text-3 mb-3 text-center">Contact us</h2>
+				<form>
+					<input type="text" placeholder="Name" class="mb-1">
+					<input type="email" placeholder="Email" class="mb-1">
+					<textarea placeholder="What do you think about..." style="width: 100%; height: 200px"></textarea>
+				</form>
+				<button class="btn-blue mt-3">Send mensage</button>
+			</div>
+		</section>
+
+
+		Rodapé
+
+		<footer class="bg-dark">
+			<div class="container flex-between md-flex-column p-3">
+				<h4 class="white text-2 uppercase mb-2">
+					<i class="fas fa-seedling"></i>Nature
+				</h4>
+
+				<div>
+					<h5 class="light text-1 mb-2">Menu</h5>
+					<a href="" class="white d-block mb-2">Home page</a>
+					<a href="" class="white d-block mb-2">Society</a>
+					<a href="" class="white d-block mb-2">Company</a>
+				</div>
+
+				<div>
+					<h5 class="light text-1 mb-2">Company</h5>
+					<a href="" class="white d-block mb-2">About</a>
+					<a href="" class="white d-block mb-2">Contact</a>
+					<a href="" class="white d-block mb-2">Address</a>
+				</div>
+			</div>
+		</footer>
+
+
+		Scroll to top, voltar para o topo
+
+		<i class='bx bxs-chevron-up-square scroll-top'></i>
+
+		-->
+
+
+		<!-- Rodapé -->
+
+		<footer class="bg-dark mt-3 p-2">
+			<div class="container flex-between-center md-d-block">
+				<a href="index.html" class="text-2">MiniFramework</a>
+
+				<p class="text-1">O MiniFramework ainda está em densenvolvimento, aguarde por atualizações.</p>
+			</div>
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="../DOM_Manipulation.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
