@@ -2,7 +2,7 @@
 const download = document.querySelectorAll('.download')
 
 download.forEach(link =>{
-  link.href = 'miniframework.tar.gz'
+  link.href = 'site/miniframework.tar.gz'
 })
 
 // Copiar os códigos HTML
