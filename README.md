@@ -4,6 +4,8 @@ Desenvolvido para facilitar a construção dos seus sites.
 
 Você pode criar e estilizar seus elementos HTML facilmente utilizando as classes CSS.
 
+**Acessar site do MiniFramework:** https://josuealmeida.github.io/MiniFramework/
+
 ## Por que utilizar MiniFramework? (propostas)
 
 - Muito fácil e prático.
