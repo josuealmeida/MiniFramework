@@ -1,56 +1,51 @@
-// MINIFRAMEWORK CSS VERSÃO 1.0
-// Autor: Josué Almeida
-// Desenvolvido a partir de Abril de 2021
+/*
+	- MiniFramework v1.0
+	- Desenvolvido por Josué Almeida
+	- Confira o projeto no GitHub: https://github.com/josuealmeida/MiniFramework
+*/
 
-// Google fonts:
-// Raleway, Montserrat, Poppins, Lato, Quicksand
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'variaveis';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-// Sass variaveis e mixins
-@import 'variaveis.scss';
-@import 'mixins.scss';
-
-// Ajustes gerais
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+	font-weight: normal;
 	color: $dark;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 300;
 }
 
-// Tamanho padrão do texto, (usar unidade de medida "rem" para definir tamanho dos textos, 1rem = 16px)
 html{
 	scroll-behavior: smooth;
 	font-size: 16px;
 }
 
-// Títulos
 h1, h2, h3, h4, h5, h6{
-	padding: 12px 0;
+	padding: 10px 0;
+	font-weight: 500;
 }
 
-h5, h6 {font-weight: 500}
+p{
+	padding: 10px 0;
+}
 
-p{padding: $size1 0}
+a{
+	text-decoration: none;
+	&, *{
+		color: $blue;
+	}
+}
 
-strong{font-weight: 700}
+strong{
+	font-weight: bold;
+}
 
-
-// Seleção do texto feito pelo usuário
 ::selection{
-	background: $yellow;
+	background: rgba(80 80 80 / 0.5);
 	color: $dark;
 }
-
-
-// Esconder barra de rolagem
-.overflow-hidden{
-	overflow: hidden;
-}
-
-
 
 // Cores de background
 .bg-dark{
@@ -130,20 +125,11 @@ strong{font-weight: 700}
 // Texto maiúsculo
 .uppercase{text-transform: uppercase;}
 
-// Formatação de links
-a{
-	text-decoration: none;
-	color: darken($blue, 20%);
-	&:hover{
-		// color: $blue;
-	}
-}
-
 
 
 // Formataçõa de listas
 li{
-	list-style-position: inside
+	list-style-position: inside;
 }
 .no-list{
 	list-style: none;
@@ -156,20 +142,12 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 	@include btn($blue, $white);
 }
 
-
 // Classic buttons
 .btn{@include btn($blue, $white)}
-
 .btn-dark{@include btn($dark, $white)}
-
 .btn-light{@include btn($light, $dark)}
-
-.btn-white{@include btn($white, $dark)}
-
 .btn-green{@include btn($green, $white)}
-
 .btn-red{@include btn($red, $light)}
-
 .btn-yellow{@include btn($yellow, $dark)}
 
 // Soft buttons
@@ -195,21 +173,9 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 }
 
 .btn-soft-yellow{
-	@include btn(lighten($yellow, 35%), darken($yellow, 20%));
+	@include btn(lighten($yellow, 30%), darken($yellow, 20%));
 	&:hover{
-		background: lighten($yellow, 40%);
-	}
-}
-
-
-
-// Formatação dos icones - Boxicons e FontAwesome
-.bx,
-.fas, .far, .fal, .fad, .fab{
-	font-size: $text3;
-	color: $gray;
-	&:hover{
-		color: darken($gray, 10%);
+		background: lighten($yellow, 35%);
 	}
 }
 
@@ -295,7 +261,6 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 // Links ativos de cabeçalhos ou de menus de navagação
 header{
 	.active{
-		// position: relative;
 		opacity: .7;
 	}
 }
@@ -304,9 +269,7 @@ header{
 
 // Botão de menu (ícone abrir menu)
 .btn-menu{
-	// display: none;
-	font-size: 30px;
-	cursor: pointer;
+	@include noButton();
 }
 
 // Menu lateral, sidebar
@@ -327,27 +290,30 @@ header{
 		opacity: 1;
 	}
 
-	// Cabeçalho do menu
+	// Cabeçalho do sidebar
 	header{	
-		padding: 15px $size2;
 		@include flex(space-between, center);
+		padding: 15px $size2;
 
-		span{
-			font: {
-				size: $text2;
-				weight: 500;
-			}
+		h2, h3, h4, h5, h6{
+			font-size: $text2;
+			font-weight: 500;				
 		}
 
-		.bx{
-			cursor: pointer;
-			color: $dark;
+		button{
+			@include noButton();
 		}
 	}
 
-	// Itens do menu lateral
+	// Itens do sidebar
 	.item{
-		font-size: $text2;
+		display: block;
+		background: none;
+		width: 100%;
+		text-align: left;
+		font-size: 1rem;
+		font-weight: normal;
+		color: inherit;
 		padding: 15px $size2;
 		display: block;
 
@@ -370,7 +336,7 @@ header{
 
 	&.open{
 		transform: translateX(0);
-		background: rgba(0 0 0 / .7);
+		background: rgba(0 0 0 / .5);
 	}
 }
 
@@ -444,22 +410,23 @@ header{
 
 // Botão scroll to top
 .scroll-top{
+	@include flex(center, center);
+	width: 45px;
+	height: 45px;
 	position: fixed;
 	right: $size1;
 	bottom: $size1;
+	border-radius: 3px;
 	transform: translateY(200%);
 	transition: transform .3s;
-	color: lighten($gray, 10%);
-	font-size: 50px;
-	cursor: pointer;
-	z-index: 20;
+	z-index: 100;
+
+	i{
+		font-size: 25px;
+	}
 
 	&.scroll-top-visible{
 		transform: translateY(0);
-	}
-
-	&:hover, &:active{
-		color: $gray;
 	}
 }
 
@@ -600,14 +567,6 @@ input[type="date"], input[type="number"], textarea{
 	}
 }
 
-.input-transparent{
-	background: rgba(250 250 250 / .8) !important;
-	border: none !important;
-	&:hover, &:focus{
-		background: $light !important;
-	}
-}
-
 .form-group{
 	max-width: 100%;
 	margin-bottom: 30px;
@@ -641,21 +600,19 @@ table{
 
 // Informações
 .info{@include info($blue)}
-.info-dark{@include info($dark)}
 .info-light{@include info($light)}
 .info-gray{@include info($gray)}
 .info-green{@include info($green)}
 .info-red{@include info($red)}
 .info-yellow{@include info($yellow)}
 
+
+
 // Imagens
 img{
-	width: 500px;
+	width: 100%;
 	object-fit: cover;
 }
-
-.full-width{width: 100% !important}
-
 
 
 // Loading
@@ -672,25 +629,21 @@ img{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: rgba(0 0 0 / .7);
+	background: $white;
 	position: fixed;
 	z-index: 50;
 
-	.loader{
-		border: 8px solid white;
-		border-right-color: transparent;
-		border-radius: 50%;
-		width: 80px;
-		height: 80px;
-		animation: loaderRotate .7s linear infinite;
+	&.hidden{
+		display: none;
 	}
 
-	p{
-		color: $white;
-		font-size: $text2;
-		text-align: center;
-		margin-top: $size2;
-		visibility: hidden;
+	.loader{
+		border: 3px solid #e5e5e5;
+		border-right-color: $blue;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		animation: loaderRotate .6s linear infinite;
 	}
 }
 
