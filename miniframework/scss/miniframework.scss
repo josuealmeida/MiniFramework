@@ -269,7 +269,7 @@ header{
 
 // Botão de menu (ícone abrir menu)
 .btn-menu{
-	@include noButton();
+	@include iconButton();
 }
 
 // Menu lateral, sidebar
@@ -301,7 +301,7 @@ header{
 		}
 
 		button{
-			@include noButton();
+			@include iconButton();
 		}
 	}
 

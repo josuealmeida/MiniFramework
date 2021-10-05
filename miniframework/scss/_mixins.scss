@@ -13,7 +13,7 @@
 
 	&, *{
 		font-size: $text1;
-		color: $color;
+		color: $color !important;
 	}
 
 	&:hover{
@@ -22,13 +22,15 @@
 	}
 }
 
-// Remover aparencia padrão do botão
-@mixin noButton{
+// Remover aparência padrão do botão (botão de ícone)
+@mixin iconButton{
+	@include flex(center, center);
 	background: none !important;
 	padding: 0;
 
 	&, *{
 		font-size: 30px;
+		color: inherit !important;
 	}
 }
 

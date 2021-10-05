@@ -194,7 +194,7 @@ button, input[type=submit], input[type=button], input[type=file] {
 }
 button, button *, input[type=submit], input[type=submit] *, input[type=button], input[type=button] *, input[type=file], input[type=file] * {
   font-size: 0.9rem;
-  color: #fff;
+  color: #fff !important;
 }
 button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=file]:hover {
   color: #fff;
@@ -215,7 +215,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn, .btn * {
   font-size: 0.9rem;
-  color: #fff;
+  color: #fff !important;
 }
 .btn:hover {
   color: #fff;
@@ -236,7 +236,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-dark, .btn-dark * {
   font-size: 0.9rem;
-  color: #fff;
+  color: #fff !important;
 }
 .btn-dark:hover {
   color: #fff;
@@ -257,7 +257,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-light, .btn-light * {
   font-size: 0.9rem;
-  color: #121214;
+  color: #121214 !important;
 }
 .btn-light:hover {
   color: #121214;
@@ -278,7 +278,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-green, .btn-green * {
   font-size: 0.9rem;
-  color: #fff;
+  color: #fff !important;
 }
 .btn-green:hover {
   color: #fff;
@@ -299,7 +299,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-red, .btn-red * {
   font-size: 0.9rem;
-  color: #f5f5f5;
+  color: #f5f5f5 !important;
 }
 .btn-red:hover {
   color: #f5f5f5;
@@ -320,7 +320,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-yellow, .btn-yellow * {
   font-size: 0.9rem;
-  color: #121214;
+  color: #121214 !important;
 }
 .btn-yellow:hover {
   color: #121214;
@@ -341,7 +341,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-soft, .btn-soft * {
   font-size: 0.9rem;
-  color: #12459b;
+  color: #12459b !important;
 }
 .btn-soft:hover {
   color: #12459b;
@@ -365,7 +365,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-soft-green, .btn-soft-green * {
   font-size: 0.9rem;
-  color: #2a7a18;
+  color: #2a7a18 !important;
 }
 .btn-soft-green:hover {
   color: #2a7a18;
@@ -389,7 +389,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-soft-red, .btn-soft-red * {
   font-size: 0.9rem;
-  color: #9f1b1b;
+  color: #9f1b1b !important;
 }
 .btn-soft-red:hover {
   color: #9f1b1b;
@@ -413,7 +413,7 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-soft-yellow, .btn-soft-yellow * {
   font-size: 0.9rem;
-  color: #a38a00;
+  color: #a38a00 !important;
 }
 .btn-soft-yellow:hover {
   color: #a38a00;
@@ -567,11 +567,15 @@ header .active {
 }
 
 .btn-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none !important;
   padding: 0;
 }
 .btn-menu, .btn-menu * {
   font-size: 30px;
+  color: inherit !important;
 }
 
 .sidebar {
@@ -601,11 +605,15 @@ header .active {
   font-weight: 500;
 }
 .sidebar header button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none !important;
   padding: 0;
 }
 .sidebar header button, .sidebar header button * {
   font-size: 30px;
+  color: inherit !important;
 }
 .sidebar .item {
   display: block;
