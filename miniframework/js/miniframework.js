@@ -1,146 +1,187 @@
+/*
+	- MiniFramework v1.0
+	- Desenvolvido por Josué Almeida
+	- Confira o projeto no GitHub: https://github.com/josuealmeida/MiniFramework
+*/
+
 console.info('VOCÊ ESTÁ UTILIZANDO O MINIFRAMEWORK V1.0')
 
-// Loading
 
-const loading = document.querySelector('.loading')
-const mensagemProblema = document.querySelector('.loading p')
 
-if (!loading) {
-	console.warn('Que tal criar o elemento de loading...')
-} else {
-	window.onload = () =>{
-		setTimeout(() =>{
-			loading.classList.remove('loading-visible')
-			mensagemProblema.style.visibility = 'hidden'
-		}, 200)
+class Loading{
+	constructor(){
+		this.loading = document.querySelector('.loading')
 	}
 
-	setTimeout(() =>{
-		mensagemProblema.style.visibility = 'visible'
-	}, 8000)
-}
+	remover(){
+		window.onload = () =>{
+			setTimeout(() =>{
 
+				this.loading ? (
+					this.loading.classList.add('hidden')
+				):console.info('Adicione o loading')
 
-
-// Menu lateral, sidebar
-
-const btnMenu = document.querySelector('.btn-menu')
-const overlay = document.querySelector('.sidebar-overlay')
-const menuMobile = document.querySelector('.sidebar')
-const linkMenu = document.querySelectorAll('.sidebar .item')
-const close = document.querySelector('.sidebar .bx-x')
-const body = document.body
-
-function abrirFechar(delayMenu, delayOverlay){
-	menuMobile.style.transitionDelay = delayMenu
-	overlay.style.transitionDelay = delayOverlay
-
-	menuMobile.classList.toggle('open')
-	overlay ? overlay.classList.toggle('open') : ''
-	body.classList.toggle('overflow-hidden')
-}
-
-if (btnMenu && menuMobile) {
-	// menu button
-	btnMenu.onclick = function(){
-		abrirFechar('.3s', '0s')
-	}
-
-	if (close) {
-		// close button
-		close.onclick = () =>{
-			abrirFechar('0s', '.3s')
+			}, 200)
 		}
-		// menu links
-		linkMenu.forEach((link) =>{
-			link.onclick = () =>{
-				abrirFechar('0s', '.3s')
-			}
-		})
-	} else {
-		console.info("Ops... você se esqueceu de adicionar <i class='bx bx-x'></i>!")
-	}
-
-	if (overlay) {
-		// overlay
-		overlay.onclick = () =>{
-			abrirFechar('0s', '.3s')
-		}
-	}	else{
-		console.info('Que tal adicionar o elemento <div class="nav-overlay"></div>')
 	}
 }
 
+const loading = new Loading()
+loading.remover()
 
 
-// Modal
 
-const btn_abrir_modal = document.querySelectorAll('.modal-btn')
-const modalOverlay = document.querySelectorAll('.modal-overlay')
-const modal_close_btn = document.querySelectorAll('.modal-overlay .bx')
-const modalCancel = document.querySelectorAll('.modal footer .close')
-const modal = document.querySelectorAll('.modal')
-
-btn_abrir_modal.forEach((button, index) =>{
-	const overlay = modalOverlay[index]
-	const close = modal_close_btn[index]
-	const cancel = modalCancel[index]
-	const box = modal[index]
-
-	button.onclick = () =>{
-		overlay.classList.add('open')
-		box.classList.add('open')
-
-		close.style.display = 'block'
+class Sidebar{
+	constructor(){
+		this.overlay = document.querySelector('.sidebar-overlay')
+		this.sidebar = document.querySelector('.sidebar')
+		this.btnOpen = document.querySelector('.btn-menu')
+		this.btnClose = document.querySelector('.sidebar header button')
+		this.itens = document.querySelectorAll('.sidebar .item')
+	}
+ 
+	alterarExibicao(delayMenu, delayOverlay){
+		this.sidebar.style.transitionDelay = delayMenu
+		this.sidebar.classList.toggle('open')		
+		
+		this.overlay ? (
+			this.overlay.style.transitionDelay = delayOverlay,
+			this.overlay.classList.toggle('open')
+		):null		
 
 		document.body.style.overflow = 'hidden'
 	}
 
-	function fecharModal(){
-		overlay.classList.remove('open')
-		box.classList.remove('open')
-
-		document.body.style.overflow = 'auto'
+	abrir(elemento){
+		elemento.onclick = () =>{
+			this.alterarExibicao('0.3s', '0s')
+		}
 	}
 
-	close.onclick = () =>{
-		fecharModal()
+	fechar(elemento){
+		elemento.onclick = () =>{
+			this.alterarExibicao('0s', '0.3s')
+		}
 	}
 
-	cancel.onclick = () =>{
-		fecharModal()
+	executar(){
+		if(this.btnOpen){			
+			this.abrir(this.btnOpen)
+
+			this.btnClose ? (
+				this.fechar(this.btnClose),		
+				this.itens.forEach((item) =>{
+					this.fechar(item)
+				})
+			):console.info("Adicione o botão para fechar o sidebar")
+
+			this.overlay ? (
+				this.fechar(this.overlay)
+			):console.info('Adicione o sidebar-overlay')
+		}
+
+		if(this.btnOpen && !this.sidebar){
+			console.info('Adicione o sidebar')
+		}
 	}
-
-	overlay.onclick = () =>{
-		fecharModal()
-	}
-})
-
-
-
-// Scroll to top
-
-const btnScroll = document.querySelector('.scroll-top')
-
-if (!btnScroll) {
-	console.info('Sem rolagem para o topo')
 }
 
-else {
-	window.onscroll = () =>{
-		if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-		 	btnScroll.classList.add('scroll-top-visible')
-		}
+const sidebar = new Sidebar()
+sidebar.executar()
 
-		else {
-			btnScroll.classList.remove('scroll-top-visible')
-		}
 
-		btnScroll.onclick = () =>{
-			window.scroll({
-				top: 0,
-				behavior: "smooth"
+
+class Modal{
+	constructor(){
+		this.modalOverlay = document.querySelector('.modal-overlay')
+		this.btnClose = document.querySelector('.modal-overlay button')
+		this.btnCancel = document.querySelectorAll('.modal footer .close')
+		this.entrada = []
+	}
+
+	set(modal, button){
+		this.modal = document.querySelector(modal)
+		this.button = document.querySelectorAll(button)
+
+		this.modal ? (
+			this.entrada.push([this.modal, this.button])
+		):console.log(`Está faltando um modal para ${button}`)
+
+		this.button.length == 0 ? (
+			console.log(`Está faltando um botão para ${modal}`)
+		):null
+	}
+
+	abrir(){
+		this.entrada.forEach((entrada) =>{
+			entrada[1].forEach((btn) =>{
+				btn.onclick = () =>{
+					this.modalOverlay.classList.add('open')
+					entrada[0].classList.add('open')
+				}
+			})
+		})
+	}
+
+	removerClass(closeElement){
+		closeElement.onclick = () =>{
+			this.entrada.forEach((entrada) =>{
+				entrada[1].forEach((btn) =>{
+					this.modalOverlay.classList.remove('open')
+					entrada[0].classList.remove('open')
+				})
 			})
 		}
 	}
+
+	fechar(){
+		this.removerClass(this.btnClose)
+		this.removerClass(this.modalOverlay)
+
+		this.btnCancel.forEach((cancel) =>{
+			this.removerClass(cancel)
+		})
+	}
+
+	executar(){
+		this.abrir()
+		this.fechar()
+	}
 }
+
+const modal = new Modal()
+
+/*
+	- 1º param: ID do modal
+	- 2º param: CLASS do botão que vai abrir esse modal
+*/
+modal.set('#termos', '.btn-termos')
+modal.set('#tutorial', '.btn-tutorial')
+modal.set('#instrucoes', '.btn-instrucoes')
+
+modal.executar()
+
+
+
+class ScrollToTop{
+	constructor(){
+		this.button = document.querySelector('.scroll-top')
+	}
+
+	executar(){
+		this.button ? (
+			window.onscroll = () =>{
+					document.body.scrollTop > 150 || document.documentElement.scrollTop > 150 ? (
+					 	this.button.classList.add('scroll-top-visible')
+					):this.button.classList.remove('scroll-top-visible')
+			},
+
+			this.button.onclick = () =>{
+				window.scroll({top: 0})
+			}
+		):null
+	}
+}
+
+const scrollToTop = new ScrollToTop()
+scrollToTop.executar()
