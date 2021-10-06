@@ -12,7 +12,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Inter', 'Helvetica', sans-serif;
 	font-weight: normal;
 	color: $dark;
 }
@@ -20,6 +20,18 @@
 html{
 	scroll-behavior: smooth;
 	font-size: 16px;
+
+	@media (max-width: $laptop){
+		&{
+			font-size: 14.5px;
+		}
+	}
+
+	@media (max-width: $tablet){
+		&{
+			font-size: 13px;
+		}
+	}
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -32,7 +44,7 @@ p{
 }
 
 a{
-	text-decoration: none;
+	text-decoration: none;	
 	&, *{
 		color: $blue;
 	}
@@ -43,7 +55,7 @@ strong{
 }
 
 ::selection{
-	background: rgba(80 80 80 / 0.5);
+	background: rgba(100 100 100 / 0.5);
 	color: $dark;
 }
 
@@ -116,6 +128,10 @@ strong{
 .text-4{font-size: $text4 !important}
 .text-5{font-size: $text5 !important}
 
+@media (max-width: $mobile){
+	.text-5{font-size: $text4 !important}
+}
+
 // Alinhamento de texto
 .text-left{text-align: left}
 .text-center{text-align: center}
@@ -125,24 +141,30 @@ strong{
 // Texto maiúsculo
 .uppercase{text-transform: uppercase;}
 
+// Texto negrito
+.bold{font-weight: bold}
+
+// Texto itálico
+.italic{font-style: italic}
 
 
-// Formataçõa de listas
+
+// Listas
 li{
 	list-style-position: inside;
 }
+
 .no-list{
 	list-style: none;
 }
 
 
 
-// Botões. Inclui tags "<button>" e "<input>"
+// Buttons
 button, input[type="submit"], input[type="button"], input[type="file"]{
 	@include btn($blue, $white);
 }
 
-// Classic buttons
 .btn{@include btn($blue, $white)}
 .btn-dark{@include btn($dark, $white)}
 .btn-light{@include btn($light, $dark)}
@@ -181,12 +203,304 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 
 
 
+// Informações
+.info{@include info($blue)}
+.info-light{@include info($light)}
+.info-gray{@include info($gray)}
+.info-green{@include info($green)}
+.info-red{@include info($red)}
+.info-yellow{@include info($yellow)}
+
+
+
+// Formulários e inputs
+input[type="text"], input[type="password"], input[type="email"],
+input[type="date"], input[type="number"], textarea{
+	background: $white;
+	border: none;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	outline: none;
+	padding: 14px 20px;
+	display: block;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 400;
+	caret-color: lighten($dark, 20%);
+	color: lighten($dark, 20%) !important;
+	resize: none;
+	transition: .2s border;
+
+	&:hover{
+		border-color: #cccccc;
+	}
+
+	&:focus{
+		border-color: $gray;
+	}
+
+	&::placeholder{
+		font-weight: 200;
+	}
+}
+
+.form-group{
+	max-width: 100%;
+	margin-top: $size2;
+}
+
+
+
+// Tabelas
+table{
+	width: 100%;
+	border-collapse: collapse;
+
+	th, td{
+		border: 1px solid darken($light, 10%);
+		padding: $size1;
+	}
+
+	th{
+		background: $blue;
+		color: $white;
+		text-align: left;
+		font-weight: 700;
+	}
+
+	tr:nth-child(even){
+		background-color: $light;
+	}
+}
+
+
+
 // Bordas
 .border{border: 1px solid $gray}
 .border-top{border-top: 1px solid $gray}
 .border-bottom{border-bottom: 1px solid $gray}
 .border-left{border-left: 1px solid $gray}
 .border-right{border-right: 1px solid $gray}
+
+
+
+// Links ativos dos menus de navagação
+header{
+	.active{
+		opacity: .7;
+	}
+}
+
+
+
+// Sidebar button
+.btn-sidebar{
+	@include iconButton();
+}
+
+// sidebar overlay
+.sidebar-overlay{
+	width: 100%;
+	height: 100%;
+	background: rgba(0 0 0 / 0);
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	transform: translateX(-100%);
+	transition: transform .2s, background .6s;
+
+	&.open{
+		transform: translateX(0);
+		background: rgba(0 0 0 / .5);
+	}
+}
+
+// Sidebar
+.sidebar{
+	width: $mobile;
+	height: 100vh;
+	background: $white;
+	position: fixed;
+	top: 0;
+	z-index: 50;
+	opacity: .6;
+	overflow: auto;
+	transform: translateX(-100%);
+	transition: transform .3s, opacity .2s, box-shadow .3s;
+
+	&.open{
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	header{	
+		@include flex(space-between, center);
+		padding: 15px $size2;
+
+		h2, h3, h4, h5, h6{
+			font-size: $text2;
+			font-weight: 500;				
+		}
+
+		button{
+			@include iconButton();
+		}
+	}
+
+	// Itens do sidebar
+	.item{
+		display: block;
+		background: none;
+		width: 100%;
+		text-align: left;
+		font-weight: normal;
+		padding: 15px $size2;
+		display: block;
+
+		&, *{
+			font-size: 1rem;
+			color: inherit !important;
+		}
+
+		&.active, &:hover, &:active{
+			background: rgba(225 225 225 / .2);
+		}
+	}
+}
+
+@media (max-width: $mobile){
+	.sidebar{width: 100%}
+}
+
+
+
+// Modal overlay
+.modal-overlay{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 80;
+
+	&.open{
+		display: block;
+		background: rgba(0 0 0 / .5);
+	}
+
+	button{
+		@include iconButton();
+		position: fixed;
+		top: $size2;
+		right: $size2;
+
+		i{
+			color: $white !important;
+		}
+	}
+}
+
+
+
+// Modal
+.modal{
+	display: none;
+	width: $tablet;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: $white;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 200;
+
+	&.open{
+		display: block;
+	}
+
+	& > article, & > section, & > form, & > div{
+		max-height: 70vh;
+		overflow: auto;
+		padding: $size3;
+
+		h2, h3, h4, h5, h6{
+			font-size: $text3;
+			font-weight: 600;
+		}
+	}
+
+	footer{
+		padding: $size1 $size3;
+		position: sticky;
+		bottom: 0;
+		width: 100%;
+		background: $light;
+		border-top: 1px solid darken($light, 5%);
+		text-align: right;
+	}
+}
+
+@media (max-width: $tablet){
+	.modal-overlay button{
+		display: none !important;
+	}
+
+	.modal{
+		width: 90%;
+
+		& > article, & > section, & > form, & > div{
+			padding: $size2;
+		}
+	}
+}
+
+@media (max-width: $mobile){
+	.modal{
+		width: 100%;
+		border-radius: 0;
+
+		footer{
+			padding: $size1 $size2;
+			
+			button, input, a{
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 5px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	} 
+}
+
+
+
+// Scroll to top
+.scroll-top{
+	@include flex(center, center);
+	width: 45px;
+	height: 45px;
+	position: fixed;
+	right: $size2;
+	bottom: $size2;
+	border-radius: 3px;
+	transform: translateY(200%);
+	transition: transform .3s;
+	z-index: 100;
+
+	&.visible{
+		transform: translateY(0);
+	}
+
+	i{
+		font-size: 25px;
+	}
+}
 
 
 
@@ -213,33 +527,55 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 .flex-column{flex-direction: column}
 .flex-wrap{flex-wrap: wrap}
 
-// Display block
+// Display
 .d-block{display: block}
-
-// Display inline-block
 .d-inline-block{display: inline-block}
-
-// Display inline
 .d-inline{display: inline}
-
-// Display none
 .d-none{display: none}
 
+@media (max-width: $laptop){
+	// Flexbox
+	.lg-flex-column{flex-direction: column}
+
+	// Display
+	.lg-d-block{display: block}
+	.lg-d-inline-block{display: inline-block}
+	.lg-d-inline{display: inline}
+	.lg-d-none{display: none}
+}
+
+@media (max-width: $tablet){
+	// Container
+	.container{max-width: 580px}
+
+	// Flexbox
+	.md-flex-column{flex-direction: column}
+
+	// Display
+	.md-d-block{display: block}
+	.md-d-inline-block{display: inline-block}
+	.md-d-inline{display: inline}
+	.md-d-none{display: none}
+}
+
+@media (max-width: $mobile){
+	// Flexbox
+	.sm-flex-column{flex-direction: column}
+
+	// Display
+	.sm-d-block{display: block}
+	.sm-d-inline-block{display: inline-block}
+	.sm-d-inline{display: inline}
+	.sm-d-none{display: none}
+}
 
 
-// Position Relative
+// Position
 .relative{position: relative}
-
-// Position Absolute
 .absolute{position: absolute}
-
-// Position fixed
 .fixed{position: fixed}
-
-// Position sticky
 .sticky{position: sticky}
 
-// Posições
 .top{top: 0}
 .bottom{bottom: 0}
 .left{left: 0}
@@ -250,184 +586,11 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 	left: 0;
 	transform: translateY(-50%);
 }
+
 .right-center{
 	top: 50%;
 	right: 0;
 	transform: translateY(-50%);
-}
-
-
-
-// Links ativos de cabeçalhos ou de menus de navagação
-header{
-	.active{
-		opacity: .7;
-	}
-}
-
-
-
-// Botão de menu (ícone abrir menu)
-.btn-menu{
-	@include iconButton();
-}
-
-// Menu lateral, sidebar
-.sidebar{
-	width: $mobile;
-	height: 100vh;
-	background: $white;
-	position: fixed;
-	top: 0;
-	z-index: 50;
-	opacity: .6;
-	overflow: auto;
-	transform: translateX(-100%);
-	transition: transform .3s, opacity .2s, box-shadow .3s;
-
-	&.open{
-		transform: translateX(0);
-		opacity: 1;
-	}
-
-	// Cabeçalho do sidebar
-	header{	
-		@include flex(space-between, center);
-		padding: 15px $size2;
-
-		h2, h3, h4, h5, h6{
-			font-size: $text2;
-			font-weight: 500;				
-		}
-
-		button{
-			@include iconButton();
-		}
-	}
-
-	// Itens do sidebar
-	.item{
-		display: block;
-		background: none;
-		width: 100%;
-		text-align: left;
-		font-size: 1rem;
-		font-weight: normal;
-		color: inherit;
-		padding: 15px $size2;
-		display: block;
-
-		&.active, &:hover, &:active{
-			background: rgba(225 225 225 / .2);
-		}
-	}
-}
-
-// sidebar overlay
-.sidebar-overlay{
-	width: 100%;
-	height: 100%;
-	background: rgba(0 0 0 / 0);
-	position: fixed;
-	top: 0;
-	z-index: 10;
-	transform: translateX(-100%);
-	transition: transform .2s, background .6s;
-
-	&.open{
-		transform: translateX(0);
-		background: rgba(0 0 0 / .5);
-	}
-}
-
-
-
-// modal overlay
-.modal-overlay{
-	display: none;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 80;
-
-	&.open{
-		display: block;
-		background: rgba(0 0 0 / .9);
-	}
-
-	.bx-x{
-		display: none;
-		position: fixed;
-		top: $size2;
-		right: $size2;
-		font-size: 35px;
-		color: $white;
-		cursor: pointer;
-	}
-}
-
-
-
-// Modal
-.modal{
-	display: none;
-	width: 60%;
-	max-height: 100vh;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: $white;
-	overflow: auto;
-	z-index: 100;
-
-	&.open{
-		display: block;
-	}
-
-	aside, article, section{
-		padding: $size3;
-
-		h2, h3, h4, h5, h6{
-			font-size: $text3;
-			font-weight: 600;
-		}
-	}
-
-	footer{
-		padding: $size1 $size3;
-		position: sticky;
-		bottom: 0;
-		width: 100%;
-		background: $light;
-		border-top: 1px solid darken($light, 5%);
-		text-align: right;
-	}
-}
-
-
-// Botão scroll to top
-.scroll-top{
-	@include flex(center, center);
-	width: 45px;
-	height: 45px;
-	position: fixed;
-	right: $size1;
-	bottom: $size1;
-	border-radius: 3px;
-	transform: translateY(200%);
-	transition: transform .3s;
-	z-index: 100;
-
-	i{
-		font-size: 25px;
-	}
-
-	&.scroll-top-visible{
-		transform: translateY(0);
-	}
 }
 
 
@@ -466,7 +629,6 @@ header{
 .mr-1{margin-right: $size1}
 .mr-2{margin-right: $size2}
 .mr-3{margin-right: $size3}
-
 
 // Margens do eixo y (vertical)
 .my-auto{@include marginY(auto)}
@@ -519,7 +681,6 @@ header{
 .pr-2{padding-right: $size2}
 .pr-3{padding-right: $size3}
 
-
 // Paddings do eixo y (vertical)
 .py-auto{@include paddingY(auto)}
 .py-0{@include paddingY(0)}
@@ -533,78 +694,6 @@ header{
 .px-1{@include paddingX($size1)}
 .px-2{@include paddingX($size2)}
 .px-3{@include paddingX($size3)}
-
-
-
-// Formatação de formulários, caixas de entrada (inputs)
-input[type="text"], input[type="password"], input[type="email"],
-input[type="date"], input[type="number"], textarea{
-	background: $white;
-	backdrop-filter: blur(2px);
-	border: none;
-	border: 1px solid $light;
-	outline: none;
-	padding: 14px 20px;
-	display: block;
-	width: 100%;
-	font-size: 1rem;
-	font-weight: 400;
-	caret-color: lighten($dark, 20%);
-	color: lighten($dark, 20%) !important;
-	resize: none;
-	transition: .2s border;
-
-	&:hover{
-		border-color: #cccccc;
-	}
-
-	&:focus{
-		border-color: $gray;
-	}
-
-	&::placeholder{
-		font-weight: 300;
-	}
-}
-
-.form-group{
-	max-width: 100%;
-	margin-bottom: 30px;
-}
-
-
-
-// Formatção de tabelas
-table{
-	width: 100%;
-	border-collapse: collapse;
-
-	th, td{
-		border: 1px solid darken($light, 10%);
-		padding: $size1;
-	}
-
-	th{
-		background: $blue;
-		color: $white;
-		text-align: left;
-		font-weight: 700;
-	}
-
-	tr:nth-child(even){
-		background-color: $light;
-	}
-}
-
-
-
-// Informações
-.info{@include info($blue)}
-.info-light{@include info($light)}
-.info-gray{@include info($gray)}
-.info-green{@include info($green)}
-.info-red{@include info($red)}
-.info-yellow{@include info($yellow)}
 
 
 
@@ -645,138 +734,4 @@ img{
 		height: 50px;
 		animation: loaderRotate .6s linear infinite;
 	}
-}
-
-
-
-// Media queries, configurações do design responsivo
-// Design "DESKTOP FIRST"
-
-// Laptops (lg) ou menos
-@media (max-width: $laptop){
-
-	// Tamanho do texto em dispositivos largos
-	html{font-size: 14.5px}
-
-
-	// Flexbox
-	.lg-flex-column{flex-direction: column}
-
-
-	// Display block
-	.lg-d-block{display: block}
-
-	// Display inline-block
-	.lg-d-inline-block{display: inline-block}
-
-	// Display inline
-	.lg-d-inline{display: inline}
-
-	// Display none
-	.lg-d-none{display: none}
-
-
-	// Mudar a largura de uma imagem para 100%
-	.lg-full-width{width: 100% !important} 
-	
-}
-
-// iPad/Tablet (md) ou menos
-@media (max-width: $tablet){
-
-	// Tamanho do texto em dispositivos médios
-	html{font-size: 13px}
-
-
-	// Container
-	.container{max-width: 580px;}
-
-
-	// Flexbox
-	.md-flex-column{flex-direction: column}
-
-
-	// Display block
-	.md-d-block{display: block}
-
-	// Display inline-block
-	.md-d-inline-block{display: inline-block}
-
-	// Display inline
-	.md-d-inline{display: inline}
-
-	// Display none
-	.md-d-none{display: none}
-
-
-	// Modal
-	.modal-overlay .bx-x{
-		display: none !important;
-	}
-
-	.modal{
-		width: 90%;
-
-		.body{
-			padding: $size3 $size2;
-		}
-	}
-
-
-	// Mudar a largura de uma imagem para 100%
-	.md-full-width{width: 100% !important}
-
-}
-
-// Mobile (sm) ou menos
-@media (max-width: $mobile){
-
-	// Flexbox
-	.sm-flex-column{flex-direction: column}
-
-
-	// Tamanho do título grande
-	.text-5{font-size: $text4 !important}
-
-
-	// Display block
-	.sm-d-block{display: block}
-
-	// Display inline-block
-	.sm-d-inline-block{display: inline-block}
-
-	// Display inline
-	.sm-d-inline{display: inline}
-
-	// Display none
-	.sm-d-none{display: none}
-
-
-	// Largura do menu lateral
-	.sidebar{width: 100%}
-
-
-	// Modal
-	.modal{
-		width: 100%;
-
-		.footer{
-			padding: $size1 $size2;
-			
-			button, input, a{
-				display: block;
-				width: 100%;
-				text-align: center;
-				margin-bottom: 5px;
-
-				&:last-child{
-					margin-bottom: 0;
-				}
-			}
-		}
-	} 
-
-
-	// Mudar a largura de uma imagem para 100%
-	.sm-full-width{width: 100% !important}
 }

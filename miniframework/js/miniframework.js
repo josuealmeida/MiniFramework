@@ -4,7 +4,7 @@
 	- Confira o projeto no GitHub: https://github.com/josuealmeida/MiniFramework
 */
 
-console.info('VOCÊ ESTÁ UTILIZANDO O MINIFRAMEWORK V1.0')
+console.info('Você está utilizando o MiniFramework v1.0')
 
 
 
@@ -19,7 +19,7 @@ class Loading{
 
 				this.loading ? (
 					this.loading.classList.add('hidden')
-				):console.info('Adicione o loading')
+				):console.warn('Adicione o loading')
 
 			}, 200)
 		}
@@ -35,7 +35,7 @@ class Sidebar{
 	constructor(){
 		this.overlay = document.querySelector('.sidebar-overlay')
 		this.sidebar = document.querySelector('.sidebar')
-		this.btnOpen = document.querySelector('.btn-menu')
+		this.btnOpen = document.querySelector('.btn-sidebar')
 		this.btnClose = document.querySelector('.sidebar header button')
 		this.itens = document.querySelectorAll('.sidebar .item')
 	}
@@ -65,23 +65,21 @@ class Sidebar{
 	}
 
 	executar(){
-		if(this.btnOpen){			
-			this.abrir(this.btnOpen)
+		if(this.btnOpen){
+			this.sidebar ? (
+				this.abrir(this.btnOpen)
+			):console.warn('Adicione o sidebar')
 
 			this.btnClose ? (
 				this.fechar(this.btnClose),		
 				this.itens.forEach((item) =>{
 					this.fechar(item)
 				})
-			):console.info("Adicione o botão para fechar o sidebar")
+			):console.warn("Adicione o botão para fechar o sidebar")
 
 			this.overlay ? (
 				this.fechar(this.overlay)
-			):console.info('Adicione o sidebar-overlay')
-		}
-
-		if(this.btnOpen && !this.sidebar){
-			console.info('Adicione o sidebar')
+			):console.warn('Adicione o sidebar-overlay')
 		}
 	}
 }
@@ -105,10 +103,10 @@ class Modal{
 
 		this.modal ? (
 			this.entrada.push([this.modal, this.button])
-		):console.log(`Está faltando um modal para ${button}`)
+		):console.warn(`Está faltando um modal para ${button}`)
 
 		this.button.length == 0 ? (
-			console.log(`Está faltando um botão para ${modal}`)
+			console.warn(`Está faltando um botão para ${modal}`)
 		):null
 	}
 
@@ -124,22 +122,35 @@ class Modal{
 	}
 
 	removerClass(closeElement){
-		closeElement.onclick = () =>{
-			this.entrada.forEach((entrada) =>{
-				entrada[1].forEach((btn) =>{
-					this.modalOverlay.classList.remove('open')
-					entrada[0].classList.remove('open')
-				})
+		this.entrada.forEach((entrada) =>{
+			entrada[1].forEach((btn) =>{
+				this.modalOverlay.classList.remove('open')
+				entrada[0].classList.remove('open')
 			})
-		}
+		})		
 	}
 
 	fechar(){
-		this.removerClass(this.btnClose)
-		this.removerClass(this.modalOverlay)
-
+		this.modalOverlay ? (
+			this.modalOverlay.onclick = () =>{
+				this.removerClass()
+			}
+		):console.warn('Adicione o modal-overlay')
+		
 		this.btnCancel.forEach((cancel) =>{
-			this.removerClass(cancel)
+			cancel.onclick = () =>{
+				this.removerClass()
+			}
+		})
+		
+		this.btnClose ? (
+			this.btnClose.onclick = () =>{
+				this.removerClass()
+			}
+		):null
+
+		document.addEventListener('keydown', event =>{
+			event.key == 'Escape' ? this.removerClass() : null
 		})
 	}
 
@@ -150,16 +161,6 @@ class Modal{
 }
 
 const modal = new Modal()
-
-/*
-	- 1º param: ID do modal
-	- 2º param: CLASS do botão que vai abrir esse modal
-*/
-modal.set('#termos', '.btn-termos')
-modal.set('#tutorial', '.btn-tutorial')
-modal.set('#instrucoes', '.btn-instrucoes')
-
-modal.executar()
 
 
 
@@ -172,8 +173,8 @@ class ScrollToTop{
 		this.button ? (
 			window.onscroll = () =>{
 					document.body.scrollTop > 150 || document.documentElement.scrollTop > 150 ? (
-					 	this.button.classList.add('scroll-top-visible')
-					):this.button.classList.remove('scroll-top-visible')
+					 	this.button.classList.add('visible')
+					):this.button.classList.remove('visible')
 			},
 
 			this.button.onclick = () =>{
