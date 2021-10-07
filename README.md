@@ -1,76 +1,40 @@
-# MiniFramework
+<div align="center">
+  <img src="./favicon.png">
+  <h1>MiniFramework</h1>
 
-Desenvolvido para facilitar a construção dos seus sites.
+  <h2>
+    <strong>Desenvolvido para facilitar a construção dos seus sites.</strong>
+  </h2>
+</div>
 
-Você pode criar e estilizar seus elementos HTML facilmente utilizando as classes CSS.
+Você pode criar e estilizar seus elementos **html** facilmente utilizando as classes **css**. Além disso você terá um **javascript** que irá atribuir funções sobre determinados elementos de forma inteligente, legal né?
 
-**Acessar site do MiniFramework:** https://josuealmeida.github.io/MiniFramework/
+**Acesse o site do MiniFramework:** https://josuealmeida.github.io/MiniFramework/
 
-## Por que utilizar MiniFramework? (propostas)
+## Por que utilizar o MiniFramework?
 
-- Muito fácil e prático.
+- Incrivelmente fácil e prático.
 - Responsivo. 
-- Vanilla js, sem dependências.
+- Vanilla.js, sem dependências.
 - Informações e ajudas no console do seu navegador.
 - Você pode desenvolver uma página inteira utilizando pouquíssima codificação css.
 
 ## Inicialização
 
-Para começar adicione o arquivo css dentro do `<head>` do seu documento HTML.
+Para começar, baixe o MiniFramework ou crie um novo projeto aqui: https://josuealmeida.github.io/MiniFramework/inicializacao.html
+
+Depois de baixar os arquivos, adicione o arquivo **css** dentro do `<head>` do seu documento html.
 
 ```
-<link rel="stylesheet" href="../miniframework v1.0/css/miniframework.css>
+<link rel="stylesheet" href="./lib/miniframework/css/miniframework.css">
 ```
 
-Adicione também o javascript no final do `<body>` do seu documento HTML.
+Adicione também o **javascript** no final do `<body>` do seu documento html.
 
 ```
-<script src="../miniframework v1.0/DOM_Manipulation.js"></script>
+<script src="./lib/miniframework/js/miniframework.js"></script>
 ```
 
-## Aqui está alguns elementos:
+## Documentação
 
-### Loading 
-
-```
-<div class="loading loading-visible">
-  <div class="loader"></div>
-  <p>Hmmm... parece que temos algum problema. Tente novamente mais tarde.</p>
-</div>
-```
-
-### Info
-
-```
-<div class="info">Eu sou uma caixinha de informação!</div>
-```
-
-### Header
-
-```
-<header class="bg-dark p-1">
-  <div class="container flex-between-center">
-    <a href="#" class="text-2 uppercase">Logo</a>
-
-    <nav class="flex-between-center">
-      <div class="md-d-none mr-3">
-        <a href="#" class="mx-1 active">Início</a>
-        <a href="#" class="mx-1">Serviços</a>
-        <a href="#" class="mx-1">Sobre</a>
-        <a href="#" class="mx-1">Contato</a>
-      </div>
-
-      <div class="flex-between-center">
-        <a href="#" class="btn-green sm-d-none">Entrar</a>
-        <i class='bx bx-menu btn-menu d-none md-d-block white ml-2'></i>
-      </div>
-    </nav>
-  </div>
-</header>
-```
-
-### Scroll to top
-
-```
-<i class='bx bxs-chevron-up-circle scroll-top'></i>
-```
+Para mais informações acesse: https://josuealmeida.github.io/MiniFramework/documentacao.html
