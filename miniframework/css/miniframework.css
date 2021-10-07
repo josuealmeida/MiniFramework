@@ -4,7 +4,7 @@
 	- Desenvolvido por Josué Almeida
 	- Confira o projeto no GitHub: https://github.com/josuealmeida/MiniFramework
 */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap';
 * {
   margin: 0;
   padding: 0;
@@ -245,27 +245,6 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   background: #1759c9;
 }
 
-.btn-dark {
-  display: inline-block;
-  background: #121214;
-  padding: 14px 20px;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
-  transition: 0.1s background;
-}
-.btn-dark, .btn-dark * {
-  font-size: 0.9rem;
-  color: #fff !important;
-}
-.btn-dark:hover {
-  color: #fff;
-  background: #060607;
-}
-
 .btn-light {
   display: inline-block;
   background: #f5f5f5;
@@ -348,6 +327,30 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 .btn-yellow:hover {
   color: #121214;
   background: #f0cb00;
+}
+
+.btn-dark {
+  display: inline-block;
+  background: #121214;
+  padding: 14px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s background;
+}
+.btn-dark, .btn-dark * {
+  font-size: 0.9rem;
+  color: #fff !important;
+}
+.btn-dark:hover {
+  color: #fff;
+  background: #060607;
+}
+.btn-dark:hover {
+  background: #42424a;
 }
 
 .btn-soft {
@@ -444,6 +447,19 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 .btn-soft-yellow:hover {
   background: #fff5bd;
+}
+
+.btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.btn-icon, .btn-icon * {
+  font-size: 30px;
+  color: inherit !important;
+  line-height: 0;
 }
 
 .info {
@@ -578,27 +594,33 @@ table tr:nth-child(even) {
 }
 
 .border {
-  border: 1px solid #989da0;
+  border: 1px solid #ccc;
 }
 
 .border-top {
-  border-top: 1px solid #989da0;
+  border-top: 1px solid #ccc;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #989da0;
+  border-bottom: 1px solid #ccc;
 }
 
 .border-left {
-  border-left: 1px solid #989da0;
+  border-left: 1px solid #ccc;
 }
 
 .border-right {
-  border-right: 1px solid #989da0;
+  border-right: 1px solid #ccc;
 }
 
-header .active {
+header .link {
+  transition: opacity 0.2s;
+}
+header .link.active {
   opacity: 0.7;
+}
+header .link:hover {
+  opacity: 0.5;
 }
 
 .btn-sidebar {
@@ -671,17 +693,21 @@ header .active {
   display: block;
   background: none;
   width: 100%;
+  padding: 15px 25px;
+  border-radius: 0;
   text-align: left;
   font-weight: normal;
-  padding: 15px 25px;
-  display: block;
+  transition: background 0.2s;
 }
 .sidebar .item, .sidebar .item * {
   font-size: 1rem;
   color: inherit !important;
 }
-.sidebar .item.active, .sidebar .item:hover, .sidebar .item:active {
-  background: rgba(225, 225, 225, 0.2);
+.sidebar .item.active {
+  background: rgba(200, 200, 200, 0.3);
+}
+.sidebar .item:hover {
+  background: rgba(200, 200, 200, 0.2);
 }
 
 @media (max-width: 425px) {
