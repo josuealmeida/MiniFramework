@@ -269,15 +269,17 @@ table{
 	border-collapse: collapse;
 
 	th, td{
-		border: 1px solid darken(variaveis.$light, 10%);
 		padding: variaveis.$size1;
 	}
 
 	th{
-		background: variaveis.$blue;
-		color: variaveis.$white;
+		border-bottom: 1px solid #ddd;
 		text-align: left;
 		font-weight: 700;
+	}
+
+	tr:nth-child(odd){
+		background-color: variaveis.$white;
 	}
 
 	tr:nth-child(even){

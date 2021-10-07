@@ -580,14 +580,15 @@ table {
   border-collapse: collapse;
 }
 table th, table td {
-  border: 1px solid gainsboro;
   padding: 10px;
 }
 table th {
-  background: #1a63e0;
-  color: #fff;
+  border-bottom: 1px solid #ddd;
   text-align: left;
   font-weight: 700;
+}
+table tr:nth-child(odd) {
+  background-color: #fff;
 }
 table tr:nth-child(even) {
   background-color: #f5f5f5;
