@@ -54,6 +54,10 @@ strong {
   color: #121214;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .bg-dark {
   background: #121214 !important;
 }

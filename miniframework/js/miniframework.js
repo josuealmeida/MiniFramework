@@ -49,7 +49,7 @@ class Sidebar{
 			this.overlay.classList.toggle('open')
 		):null		
 
-		document.body.style.overflow = 'hidden'
+		document.body.classList.toggle('overflow-hidden')
 	}
 
 	abrir(elemento){
