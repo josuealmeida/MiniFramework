@@ -81,9 +81,9 @@
 	display: grid;
 	grid-template-columns: $column;
 
-	&.grid-gap-1{grid-gap: variaveis.$size1}
-	&.grid-gap-2{grid-gap: variaveis.$size2}
-	&.grid-gap-3{grid-gap: variaveis.$size3}
+	&.grid-gap-1 > *{margin: 5px}
+	&.grid-gap-2 > *{margin: 10px}
+	&.grid-gap-3 > *{margin: 15px}
 }
 
 
