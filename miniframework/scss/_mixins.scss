@@ -76,6 +76,18 @@
 
 
 
+// Grid layout
+@mixin grid($column){
+	display: grid;
+	grid-template-columns: $column;
+
+	&.grid-gap-1{grid-gap: variaveis.$size1}
+	&.grid-gap-2{grid-gap: variaveis.$size2}
+	&.grid-gap-3{grid-gap: variaveis.$size3}
+}
+
+
+
 // Informações, notificação
 @mixin info($color){
 	@include flex(space-between, center);

@@ -557,53 +557,46 @@ header{
 
 
 // Grid layout
-.grid{
-	display: grid;
+$col2: calc(100% / 2);
+$col3: calc(100% / 3);
+$col4: calc(100% / 4);
+$col5: calc(100% / 5);
+$col6: calc(100% / 6);
 
-	$col2: calc(100% / 2);
-	$col3: calc(100% / 3);
-	$col4: calc(100% / 4);
-	$col5: calc(100% / 5);
-	$col6: calc(100% / 6);
+.grid-column-1{@include mixins.grid(auto)}
+.grid-column-2{@include mixins.grid($col2 $col2)}
+.grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+.grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+.grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+.grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
 
-	&.grid-column-1{grid-template-columns: auto}
-	&.grid-column-2{grid-template-columns: $col2 $col2}
-	&.grid-column-3{grid-template-columns: $col3 $col3 $col3}
-	&.grid-column-4{grid-template-columns: $col4 $col4 $col4 $col4}
-	&.grid-column-5{grid-template-columns: $col5 $col5 $col5 $col5 $col5}
-	&.grid-column-6{grid-template-columns: $col6 $col6 $col6 $col6 $col6 $col6}
-
-	&.grid-gap-1{grid-gap: variaveis.$size1}
-	&.grid-gap-2{grid-gap: variaveis.$size2}
-	&.grid-gap-3{grid-gap: variaveis.$size3}
-
-	@media (max-width: variaveis.$laptop){
-		&.lg-grid-column-1{grid-template-columns: auto}
-		&.lg-grid-column-2{grid-template-columns: $col2 $col2}
-		&.lg-grid-column-3{grid-template-columns: $col3 $col3 $col3}
-		&.lg-grid-column-4{grid-template-columns: $col4 $col4 $col4 $col4}
-		&.lg-grid-column-5{grid-template-columns: $col5 $col5 $col5 $col5 $col5}
-		&.lg-grid-column-6{grid-template-columns: $col6 $col6 $col6 $col6 $col6 $col6}
-	}
-
-	@media (max-width: variaveis.$tablet){
-		&.md-grid-column-1{grid-template-columns: auto}
-		&.md-grid-column-2{grid-template-columns: $col2 $col2}
-		&.md-grid-column-3{grid-template-columns: $col3 $col3 $col3}
-		&.md-grid-column-4{grid-template-columns: $col4 $col4 $col4 $col4}
-		&.md-grid-column-5{grid-template-columns: $col5 $col5 $col5 $col5 $col5}
-		&.md-grid-column-6{grid-template-columns: $col6 $col6 $col6 $col6 $col6 $col6}
-	}
-
-	@media (max-width: variaveis.$mobile){
-		&.sm-grid-column-1{grid-template-columns: auto}
-		&.sm-grid-column-2{grid-template-columns: $col2 $col2}
-		&.sm-grid-column-3{grid-template-columns: $col3 $col3 $col3}
-		&.sm-grid-column-4{grid-template-columns: $col4 $col4 $col4 $col4}
-		&.sm-grid-column-5{grid-template-columns: $col5 $col5 $col5 $col5 $col5}
-		&.sm-grid-column-6{grid-template-columns: $col6 $col6 $col6 $col6 $col6 $col6}
-	}
+@media (max-width: variaveis.$laptop){
+	.lg-grid-column-1{@include mixins.grid(auto)}
+	.lg-grid-column-2{@include mixins.grid($col2 $col2)}
+	.lg-grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+	.lg-grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+	.lg-grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+	.lg-grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
 }
+
+@media (max-width: variaveis.$tablet){
+	.md-grid-column-1{@include mixins.grid(auto)}
+	.md-grid-column-2{@include mixins.grid($col2 $col2)}
+	.md-grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+	.md-grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+	.md-grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+	.md-grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
+}
+
+@media (max-width: variaveis.$mobile){
+	.sm-grid-column-1{@include mixins.grid(auto)}
+	.sm-grid-column-2{@include mixins.grid($col2 $col2)}
+	.sm-grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+	.sm-grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+	.sm-grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+	.sm-grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
+}
+
 
 
 
