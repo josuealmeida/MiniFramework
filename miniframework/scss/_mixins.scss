@@ -80,6 +80,7 @@
 @mixin grid($column){
 	display: grid;
 	grid-template-columns: $column;
+	align-items: flex-start;
 
 	&.grid-gap-1 > *{margin: 5px}
 	&.grid-gap-2 > *{margin: 10px}

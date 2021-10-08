@@ -570,6 +570,8 @@ $col6: calc(100% / 6);
 .grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
 .grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
 
+.grid-align-center{align-items: center}
+
 @media (max-width: variaveis.$laptop){
 	.lg-grid-column-1{@include mixins.grid(auto)}
 	.lg-grid-column-2{@include mixins.grid($col2 $col2)}
