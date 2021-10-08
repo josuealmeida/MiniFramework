@@ -457,12 +457,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   padding: 0;
 }
 .btn-icon, .btn-icon * {
-  font-size: 30px;
+  font-size: 25px;
   color: inherit !important;
   line-height: 0;
 }
 
 .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #b6cef7;
   border: 1px solid #5b90ec;
   padding: 18px 22px;
@@ -474,8 +477,23 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   color: #0d316e;
   font-weight: 600;
 }
+.info .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.info .close, .info .close * {
+  font-size: 25px;
+  color: inherit !important;
+  line-height: 0;
+}
 
 .info-light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: white;
   border: 1px solid white;
   padding: 18px 22px;
@@ -487,8 +505,23 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   color: #b5b5b5;
   font-weight: 600;
 }
+.info-light .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.info-light .close, .info-light .close * {
+  font-size: 25px;
+  color: inherit !important;
+  line-height: 0;
+}
 
 .info-gray {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #f5f5f6;
   border: 1px solid #c0c3c5;
   padding: 18px 22px;
@@ -500,8 +533,23 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   color: #595d60;
   font-weight: 600;
 }
+.info-gray .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.info-gray .close, .info-gray .close * {
+  font-size: 25px;
+  color: inherit !important;
+  line-height: 0;
+}
 
 .info-green {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #b2eda5;
   border: 1px solid #69dc4f;
   padding: 18px 22px;
@@ -513,8 +561,23 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   color: #1b5010;
   font-weight: 600;
 }
+.info-green .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.info-green .close, .info-green .close * {
+  font-size: 25px;
+  color: inherit !important;
+  line-height: 0;
+}
 
 .info-red {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #f5c4c4;
   border: 1px solid #e66c6c;
   padding: 18px 22px;
@@ -526,8 +589,23 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   color: #731414;
   font-weight: 600;
 }
+.info-red .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.info-red .close, .info-red .close * {
+  font-size: 25px;
+  color: inherit !important;
+  line-height: 0;
+}
 
 .info-yellow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #fff5bd;
   border: 1px solid #ffe657;
   padding: 18px 22px;
@@ -538,6 +616,18 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 .info-yellow, .info-yellow * {
   color: #8a7500;
   font-weight: 600;
+}
+.info-yellow .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;
+  padding: 0;
+}
+.info-yellow .close, .info-yellow .close * {
+  font-size: 25px;
+  color: inherit !important;
+  line-height: 0;
 }
 
 input[type=text], input[type=password], input[type=email],
@@ -632,7 +722,7 @@ header .link:hover {
   padding: 0;
 }
 .btn-sidebar, .btn-sidebar * {
-  font-size: 30px;
+  font-size: 25px;
   color: inherit !important;
   line-height: 0;
 }
@@ -686,7 +776,7 @@ header .link:hover {
   padding: 0;
 }
 .sidebar header button, .sidebar header button * {
-  font-size: 30px;
+  font-size: 25px;
   color: inherit !important;
   line-height: 0;
 }
@@ -740,7 +830,7 @@ header .link:hover {
   right: 25px;
 }
 .modal-overlay button, .modal-overlay button * {
-  font-size: 30px;
+  font-size: 25px;
   color: inherit !important;
   line-height: 0;
 }

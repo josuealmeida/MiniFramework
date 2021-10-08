@@ -186,3 +186,23 @@ class ScrollToTop{
 
 const scrollToTop = new ScrollToTop()
 scrollToTop.executar()
+
+
+
+class Info{
+	constructor(){
+		this.info = document.querySelectorAll('.info-close')
+		this.btnClose = document.querySelectorAll('.info-close .close')
+	}
+
+	fechar(){
+		this.info.forEach((info, index) =>{
+			this.btnClose[index].onclick = () =>{
+				info.style.display = 'none'
+			}
+		})
+	}
+}
+
+const info = new Info()
+info.fechar()
