@@ -1,3 +1,18 @@
+.info-close {
+  border-radius: 0;
+}
 
+#por-que-usar {
+  margin-top: 100px;
+}
+#por-que-usar header {
+  position: sticky;
+  top: 100px;
+}
+@media (max-width: 768px) {
+  #por-que-usar header {
+    position: static;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

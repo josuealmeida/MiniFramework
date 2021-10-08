@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Crie elementos html de uma maneira incrivelmente fácil.">
+		<meta name="keywords" content="framework, css, javascript, html">
 		
 		<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
 		<link rel="stylesheet" href="../miniframework/css/miniframework.css">
@@ -23,7 +25,13 @@
 
 
 		<!-- INFO -->
-		<!-- <p class="info">O MiniFramework agora está na sua primeira versão estável, aproveite os novos recurso.</p> -->
+		<p class="info info-close">
+			<span>O MiniFramework agora está na sua primeira versão estável, aproveite os novos recurso.</span>
+
+			<button class="close">
+				<i class="bx bx-x"></i>
+			</button>
+		</p>
 
 
 
@@ -60,7 +68,7 @@
 
 		<nav class="sidebar bg-light">
 			<header>
-				<h3>Menu</h3>
+				<h4>Menu</h4>
 				
 				<button>
 					<i class="bx bx-x"></i>
@@ -81,34 +89,87 @@
 		<main class="pt-3">
 
 			<!-- INTRODUCTION -->
-			<section class="container text-center">
-				<header>
-					<h1 class="text-5 p-0 bold">Otimize seu trabalho com Mini<span class="blue bold">Framework</span></h1>
-					<h2 class="text-2 gray">Com o MiniFramework você conseguirá criar elementos de uma maneira incrivelmente fácil.</h2>
-				</header>
+			<section class="text-center px-2">
+				<div class="container">
+					<header>
+						<h1 class="text-5 p-0 bold">Otimize seu trabalho com Mini<span class="blue bold">Framework</span></h1>
+						<h2 class="text-2 gray mb-2">Com o MiniFramework você conseguirá criar elementos de uma maneira incrivelmente fácil.</h2>
+					</header>
 
-				<nav class="mt-2">
-					<a href="./primeiros-passos.html" class="btn-light">Primeiros passos</a>
-					<a href="" class="btn-dark">Sou experiente</a>
-				</nav>
+					<a href="./primeiros-passos.html" class="btn-light sm-d-block mt-1">Primeiros passos</a>
+					<a href="" class="btn-dark sm-d-block mt-1">Sou experiente</a>
+				</div>
 			</section>
 
-			<!-- POR QUE USAR? -->
-			<section id="por-que-usar" class="container mt-3">
-				<header>
-					<h2 class="text-4 bold">Por que usar?</h2>
-					<h3 class="text-2 gray">Veja os benefícios de utilizar o MiniFramework em seus projetos</h3>
-				</header>
 
-				<div>
-					<article>
-						<i class='bx bxs-terminal text-4'></i>
-						<p class="text-2">Informações e ajudas no console do seu navegador.</p>
-					</article>
+
+			<!-- POR QUE USAR? -->
+			<section id="por-que-usar" class="px-2">
+				<div class="container grid-column-2 md-grid-column-1 grid-gap-1">
+					<header>
+						<h2 class="text-4 bold">Por que usar?</h2>
+						<h3 class="text-2 gray">Veja os benefícios de utilizar o MiniFramework em seus projetos</h3>
+					</header>
+
+					<div>
+						<article class="bg-light p-2">
+							<i class='bx bxs-happy-beaming text-4'></i>
+							<p class="text-2">Incrivelmente fácil e prático.</p>
+						</article>
+
+						<article class="bg-light p-2 mt-2">
+							<i class='bx bxs-terminal text-4'></i>
+							<p class="text-2">Você terá informações e ajudas no console do seu navegador sobre elementos html criados.</p>
+						</article>
+
+						<article class="bg-light p-2 mt-2">
+							<i class='bx bxs-devices text-4'></i>
+							<p class="text-2">Seu site vai ter uma boa aparência em vários tipos de dispositivos.</p>
+						</article>
+
+						<article class="bg-light p-2 mt-2">
+							<i class='bx bxl-javascript text-4'></i>
+							<p class="text-2">Vanilla.js, sem dependências de bibliotecas javascript.</p>
+						</article>
+						
+						<article class="bg-light p-2 mt-2">
+							<i class='bx bxs-layout text-4'></i>
+							<p class="text-2">Você pode desenvolver uma página inteira utilizando pouquíssima codificação css.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+
+
+			<!-- CRIAR NOVO PROJETO -->
+			<section class="bg-light px-2 mt-3">
+				<div class="container grid-column-2 md-grid-column-1 grid-align-center grid-gap-2">
+					
+					<div>
+						<h2 class="text-4 bold">Crie um novo projeto</h2>
+						<p>Você pode baixar um template de novo projeto aqui, a pasta já vem toda organizada e com o MiniFramework, isso não é incrível?</p>
+
+						<a href="./primeiros-passos" class="btn-gray sm-d-block mt-1">Saiba mais</a>
+						<a href="../projeto.tar.gz" download class="btn-dark sm-d-block mt-1">Criar novo projeto</a>
+					</div>
+
+					<div>
+						<img src="./assets/img/undraw_static_assets.svg" alt="" class="md-d-none mt-2">
+					</div>
+
 				</div>
 			</section>
 		</main>
+
+
+
+		<!-- SCROLL TO TOP -->
+		<button class="btn-dark scroll-top">
+			<i class="bx bx-chevron-up"></i>
+		</button>
 		
+
 
 		<!-- MINIFRAMEWORK JS -->
 		<script src="../miniframework/js/miniframework.js"></script>
