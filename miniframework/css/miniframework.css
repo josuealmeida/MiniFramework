@@ -266,6 +266,27 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   background: #e8e8e8;
 }
 
+.btn-gray {
+  display: inline-block;
+  background: #989da0;
+  padding: 14px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s background;
+}
+.btn-gray, .btn-gray * {
+  font-size: 0.9rem;
+  color: #fff !important;
+}
+.btn-gray:hover {
+  color: #fff;
+  background: #8b9094;
+}
+
 .btn-green {
   display: inline-block;
   background: #40ba25;

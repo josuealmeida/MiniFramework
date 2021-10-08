@@ -167,6 +167,7 @@ button, input[type="submit"], input[type="button"], input[type="file"]{
 
 .btn{@include mixins.btn(variaveis.$blue, variaveis.$white)}
 .btn-light{@include mixins.btn(variaveis.$light, variaveis.$dark)}
+.btn-gray{@include mixins.btn(variaveis.$gray, variaveis.$white)}
 .btn-green{@include mixins.btn(variaveis.$green, variaveis.$white)}
 .btn-red{@include mixins.btn(variaveis.$red, variaveis.$light)}
 .btn-yellow{@include mixins.btn(variaveis.$yellow, variaveis.$dark)}
