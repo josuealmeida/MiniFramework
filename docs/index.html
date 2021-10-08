@@ -3,164 +3,115 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Um framework prático, produtivo e muito fácil de usar. Conheça o MiniFramework agora!">
-		<meta name="keywords" content="framework, css, javascript, js, fácil, rápido, leve, produtivo, design moderno, responsivo">
-		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-		<link rel="stylesheet" href="../miniframework/css/miniframework.css">
-		<link rel="icon" href="../favicon.png">
 		
-		<style>
-			#main{
-				background: linear-gradient(to right, #7c92d3, #cc28cc);
-				min-height: 50vh;
-			}
-			.bx-check{
-				font-size: 1rem;
-			}
-		</style>
+		<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+		<link rel="stylesheet" href="../miniframework/css/miniframework.css">
+		<link rel="stylesheet" href="./assets/css/main.css">
+		
+		<link rel="icon" href="../favicon.png">
 
-		<title>MiniFramework - Um framework prático e produtivo</title>
+		<title>MiniFramework - Um framework prático e fácil</title>
 	</head>
 	
 	<body>
 
-		<!-- Loading -->
-		<div class="loading loading-visible">
+		<!-- LOADING -->
+		<div class="loading">
 			<div class="loader"></div>
-			<p>Hmmm... parece que temos algum problema. Tente novamente mais tarde.</p>
 		</div>
 
 
-		<!-- Topo - cabeçalho, menu principal, barra de navegação -->
 
-		<header class="bg-blue full-width p-1">
+		<!-- INFO -->
+		<!-- <p class="info">O MiniFramework agora está na sua primeira versão estável, aproveite os novos recurso.</p> -->
+
+
+
+		<!-- HEADER -->
+		<header class="bg-dark p-1">
 			<div class="container flex-between-center">
-				<a href="index.html" class="text-2 uppercase">MiniFramework</a>
-
+				<a href="./" class="text-2 bold">MiniFramework</a>
+				
 				<nav class="flex-between-center">
 					<div class="md-d-none">
-						<a href="index.html" class="mx-1 relative active">Início</a>
-						<a href="documentacao.html" class="mx-1">Documentação</a>
-						<a href="elementos.html" class="mx-1">Elementos</a>
+						<a href="./" class="link active mx-1">Início</a>
+						<a href="./primeiros-passos.html" class="link mx-1">Documentação</a>
 					</div>
 
-					<a href="#" download class="download btn-light ml-3">Baixar v1.0</a>
-					<i class='bx bx-menu btn-menu d-none md-d-block white ml-2'></i>
+					<div class="flex ml-2">
+						<a href="../miniframework.tar.gz" download class="btn-light sm-d-none">Baixar v1.0</a>
+
+						<a href="https://github.com/josuealmeida/MiniFramework" class="btn-icon sm-d-none ml-2">
+							<i class="bx bxl-github"></i>
+						</a>
+
+						<button class="btn-sidebar d-none md-d-block ml-2">
+							<i class="bx bx-menu"></i>
+						</button>
+					</div>
 				</nav>
 			</div>
 		</header>
 
 
-		<!-- Sidebar -->
 
-		<div class="sidebar-overlay d-none md-d-block"></div>
+		<!-- SIDEBAR -->
+		<div class="sidebar-overlay"></div>
 
-		<nav class="sidebar d-none md-d-block bg-white">
+		<nav class="sidebar bg-light">
 			<header>
-				<span>Menu</span>
-				<i class='bx bx-x'></i>
+				<h3>Menu</h3>
+				
+				<button>
+					<i class="bx bx-x"></i>
+				</button>
 			</header>
 
-			<a href="index.html" class="item active">Início</a>
-			<a href="documentacao.html" class="item">Documentação</a>
-			<a href="elementos.html" class="px-2 item">Elementos</a>
+			<div>
+				<a href="./" class="item active">Início</a>
+				<a href="./primeiros-passos.html" class="item">Documentação</a>
+				<a href="https://github.com/josuealmeida/MiniFramework" class="item mt-1">Ver GitHub</a>
+				<a href="../miniframework.tar.gz" download class="item mt-2">Baixar v1.0</a>
+			</div>
 		</nav>
 
 
-		<!-- Início - background e apresentação -->
 
-		<div id="main" class="flex-center p-1">
-			<div class="container">
-				<h1 class="text-5 white">Um framework prático e produtivo</h1>
-				<p class="text-2 mt-1 white">Esse framework foi desenvolvido pensando na praticidade, possuindo classes css com as propriedades mais usadas para o desenvolvimento diário.</p>
-			</div>
-		</div>
+		<!-- MAIN -->
+		<main class="pt-3">
 
+			<!-- INTRODUCTION -->
+			<section class="container text-center">
+				<header>
+					<h1 class="text-5 p-0 bold">Otimize seu trabalho com Mini<span class="blue bold">Framework</span></h1>
+					<h2 class="text-2 gray">Com o MiniFramework você conseguirá criar elementos de uma maneira incrivelmente fácil.</h2>
+				</header>
 
-		<!-- Cards das principais características -->
+				<nav class="mt-2">
+					<a href="./primeiros-passos.html" class="btn-light">Primeiros passos</a>
+					<a href="" class="btn-dark">Sou experiente</a>
+				</nav>
+			</section>
 
-		<div class="bg-light">
-			<div class="container flex-center p-1">
-				<i class='bx bxl-html5 mx-2'></i>
-				<i class='bx bxl-css3 mx-2'></i>
-				<i class='bx bxl-sass mx-2'></i>
-				<i class='bx bxl-javascript mx-2'></i>
-			</div>
-		</div>
-		
+			<!-- POR QUE USAR? -->
+			<section id="por-que-usar" class="container mt-3">
+				<header>
+					<h2 class="text-4 bold">Por que usar?</h2>
+					<h3 class="text-2 gray">Veja os benefícios de utilizar o MiniFramework em seus projetos</h3>
+				</header>
 
-		<!-- Porquê Miniframework? -->
-		
-		<section class="mt-3 px-2">
-			<div class="container">
-				<h4 class="text-3 mt-3">Por que usar MiniFramework?</h4>
-
-				<ul class="mt-2 no-list">
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Muito fácil e prático.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Classes com os estilos mais usados no dia a dia.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Muito leve.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Totalmente responsivo.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Design moderno.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Vanilla js, sem dependências.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Informações e ajudas no console do seu navegador.
-					</li>
-
-					<li class="text-2 mb-1">
-						<i class='bx bx-check green'></i>
-						Você pode desenvolver uma página inteira utilizando pouquíssima codificação css.
-					</li>
-
-					<li class="text-2">
-						<i class='bx bx-check green'></i>
-						Sem tempo? sem problema.
-					</li>
-				</ul>
-
-				<div class="flex-center">
-					<a href="documentacao.html" class="btn mt-3">Comece agora!</a>
+				<div>
+					<article>
+						<i class='bx bxs-terminal text-4'></i>
+						<p class="text-2">Informações e ajudas no console do seu navegador.</p>
+					</article>
 				</div>
-			</div>
-		</section>
+			</section>
+		</main>
 		
 
-		<!-- Rodapé -->
-
-		<footer class="bg-dark mt-3 p-2">
-			<div class="container flex-between-center md-d-block">
-				<a href="index.html" class="text-2">MiniFramework</a>
-
-				<p class="text-1">O MiniFramework ainda está em densenvolvimento, aguarde por atualizações.</p>
-			</div>
-		</footer>
-
-		<!-- JavaScript -->
+		<!-- MINIFRAMEWORK JS -->
 		<script src="../miniframework/js/miniframework.js"></script>
-		<script src="./assets/js/main.js"></script>
+
 	</body>
 </html>
