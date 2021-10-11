@@ -1,0 +1,83 @@
+#mensagem-copiado {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  padding: 10px 15px;
+  transform: translate(-50%, -150%);
+  transition: transform 0.2s;
+}
+#mensagem-copiado.visible {
+  transform: translate(-50%, 0);
+}
+
+#menu-lateral {
+  position: sticky;
+  top: 0;
+  width: 265px;
+  height: 100vh;
+  padding: 25px;
+  overflow: auto;
+}
+@media (max-width: 768px) {
+  #menu-lateral {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+}
+#menu-lateral ul {
+  list-style: none;
+}
+#menu-lateral ul li {
+  padding: 10px;
+}
+#menu-lateral ul li a {
+  color: #444;
+  transition: color 0.2s;
+}
+#menu-lateral ul li a:hover {
+  color: #1a63e0;
+}
+
+main {
+  width: calc(100% - 265px);
+}
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+}
+main article {
+  margin-top: 25px;
+}
+main article h3 {
+  font-size: 1.8rem;
+}
+main article .code {
+  position: relative;
+}
+main article .code pre {
+  overflow-x: auto;
+}
+main article .code button {
+  background: none !important;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+main article .code button, main article .code button * {
+  font-size: 25px;
+  color: inherit !important;
+}
+main article .code button i {
+  display: block;
+}
+main article .code button i {
+  font-size: 1rem;
+  color: #333 !important;
+  display: block;
+}
+
+/*# sourceMappingURL=documentacao.css.map */

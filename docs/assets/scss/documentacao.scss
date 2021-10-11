@@ -1,0 +1,87 @@
+@use '../../../miniframework/scss/variaveis';
+@use '../../../miniframework/scss/mixins';
+
+#mensagem-copiado{
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	padding: 10px 15px;
+	transform: translate(-50%, -150%);
+	transition: transform .2s;
+
+	&.visible{
+		transform: translate(-50%, 0);
+	}
+}
+
+#menu-lateral{
+	position: sticky;
+	top: 0;
+	width: 265px;
+	height: 100vh;
+	padding: variaveis.$size2;
+	overflow: auto;
+
+	@media (max-width: variaveis.$tablet){
+		width: 100%;
+		position: static;
+		height: auto;
+	}
+
+	ul{
+		list-style: none;
+
+		li{
+			padding: variaveis.$size1;
+
+			a{
+				color: #444;
+				transition: color .2s;
+
+				&:hover{
+					color: variaveis.$blue;
+				}
+			}
+		}
+	}
+}
+
+
+
+main{
+	width: calc(100% - 265px);
+
+	@media (max-width: variaveis.$tablet){
+		width: 100%;
+	}
+
+	article{
+		margin-top: variaveis.$size2;
+
+		h3{
+			font-size: variaveis.$text3;
+		}
+
+		.code{
+			position: relative;
+
+			pre{
+				overflow-x: auto; 
+			}
+
+			button{
+				@include mixins.iconButton();
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px;
+				
+				i{
+					font-size: 1rem;
+					color: #333 !important;
+					display: block;
+				}
+			}
+		}
+	}
+}
