@@ -487,16 +487,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
 }
 
 .btn-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .btn-icon, .btn-icon * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.btn-icon i {
+  display: block;
 }
 
 .info {
@@ -515,16 +514,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   font-weight: 600;
 }
 .info .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .info .close, .info .close * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.info .close i {
+  display: block;
 }
 
 .info-light {
@@ -543,16 +541,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   font-weight: 600;
 }
 .info-light .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .info-light .close, .info-light .close * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.info-light .close i {
+  display: block;
 }
 
 .info-gray {
@@ -571,16 +568,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   font-weight: 600;
 }
 .info-gray .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .info-gray .close, .info-gray .close * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.info-gray .close i {
+  display: block;
 }
 
 .info-green {
@@ -599,16 +595,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   font-weight: 600;
 }
 .info-green .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .info-green .close, .info-green .close * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.info-green .close i {
+  display: block;
 }
 
 .info-red {
@@ -627,16 +622,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   font-weight: 600;
 }
 .info-red .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .info-red .close, .info-red .close * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.info-red .close i {
+  display: block;
 }
 
 .info-yellow {
@@ -655,16 +649,15 @@ button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=fil
   font-weight: 600;
 }
 .info-yellow .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .info-yellow .close, .info-yellow .close * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.info-yellow .close i {
+  display: block;
 }
 
 input[type=text], input[type=password], input[type=email],
@@ -752,16 +745,15 @@ header .link:hover {
 }
 
 .btn-sidebar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .btn-sidebar, .btn-sidebar * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.btn-sidebar i {
+  display: block;
 }
 
 .sidebar-overlay {
@@ -806,16 +798,15 @@ header .link:hover {
   font-weight: 500;
 }
 .sidebar header button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
 }
 .sidebar header button, .sidebar header button * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.sidebar header button i {
+  display: block;
 }
 .sidebar .item {
   display: block;
@@ -857,9 +848,6 @@ header .link:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 .modal-overlay button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none !important;
   padding: 0;
   position: fixed;
@@ -869,7 +857,9 @@ header .link:hover {
 .modal-overlay button, .modal-overlay button * {
   font-size: 25px;
   color: inherit !important;
-  line-height: 0;
+}
+.modal-overlay button i {
+  display: block;
 }
 .modal-overlay button i {
   color: #fff !important;

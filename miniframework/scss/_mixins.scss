@@ -25,16 +25,18 @@
 	}
 }
 
-// Remover aparência padrão do botão (botão de ícone)
+// Icon button (Remover aparência padrão do botão)
 @mixin iconButton{
-	@include flex(center, center);
 	background: none !important;
 	padding: 0;
-
+	
 	&, *{
 		font-size: 25px;
 		color: inherit !important;
-		line-height: 0;
+	}
+
+	i{
+		display: block;
 	}
 }
 
