@@ -9,7 +9,7 @@
 
 Você pode criar e estilizar seus elementos **html** facilmente utilizando as classes **css**. Além disso você terá um **javascript** que irá atribuir funções sobre determinados elementos de forma inteligente, legal né?
 
-**Acesse o site do MiniFramework:** https://josuealmeida.github.io/MiniFramework/
+**Acesse o site do MiniFramework:** https://josuealmeida.github.io/MiniFramework
 
 ## Por que utilizar o MiniFramework?
 
@@ -21,12 +21,12 @@ Você pode criar e estilizar seus elementos **html** facilmente utilizando as cl
 
 ## Inicialização
 
-Para começar, baixe o MiniFramework ou crie um novo projeto aqui: https://josuealmeida.github.io/MiniFramework/inicializacao.html
+Para começar, baixe o MiniFramework ou crie um novo projeto aqui: https://josuealmeida.github.io/MiniFramework/documentacao.html#inicializacao
 
 Depois de baixar os arquivos, adicione o arquivo **css** dentro do `<head>` do seu documento html.
 
 ```
-<link rel="stylesheet" href="./lib/miniframework/css/miniframework.css">
+<link rel="stylesheet" href="./lib/miniframework/css/miniframework.min.css">
 ```
 
 Adicione também o **javascript** no final do `<body>` do seu documento html.
